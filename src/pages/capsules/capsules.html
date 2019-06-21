@@ -1,0 +1,26 @@
+<!--
+  Generated template for the CapsulesPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Toutes les Capsules</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="pageView">
+    <ion-list>
+      <button class="cell" ion-item no-lines *ngFor = "let capsule of capsules" (click)="openCapsuleDetail(capsule)">
+        <ion-avatar item-start>
+          <img src="assets/imgs/capsule_cell.png">
+        </ion-avatar>
+        {{ capsule.name }} <br />
+        <p>ID: {{ capsule.id}}</p>
+      </button>
+    </ion-list>
+</ion-content>

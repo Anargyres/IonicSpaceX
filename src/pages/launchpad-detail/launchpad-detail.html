@@ -1,0 +1,54 @@
+<!--
+  Generated template for the LaunchpadDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title> {{launchpad.location.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="pageView">
+    <ion-card class="cardContent">
+        <ion-card-content>
+          <p>
+            <b>Nom Complet: </b> {{launchpad.full_name}}  <br />
+            <b>ID: </b> {{launchpad.id}} <br/>
+          </p>
+        </ion-card-content>
+      </ion-card>
+  
+      <ion-card class="cardContent">
+          <ion-card-content>
+            <h2><b>LOCATION</b></h2> 
+            <div class = "drawLine"></div><br />
+            <p>
+              <b>Nom: </b> {{launchpad.location.name}}  <br />
+              <b>Région: </b> {{launchpad.location.region}} <br/>
+            </p>
+          </ion-card-content>
+      </ion-card>
+  
+      <ion-card class="cardContent"> 
+          <ion-card-content>
+            <h2><b>VÉHICULES LANCÉS</b></h2>
+            <div class = "drawLine"></div><br />
+            <p *ngFor = "let vehicle of launchpad.vehicles_launched" >
+              <b>Nom : </b> <button class= "cell" (click)="openRocketDetail(vehicle)">{{vehicle}}</button><br />
+            </p>
+          </ion-card-content>
+      </ion-card>
+
+      <ion-card class="cardContent">
+          <ion-card-content>
+            <p>
+              {{launchpad.details}} <br/>
+            </p>
+          </ion-card-content>
+      </ion-card>
+</ion-content>

@@ -1,0 +1,72 @@
+<!--
+  Generated template for the LaunchDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{launch?.mission_name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="pageView">
+  <ion-card class="cardContent">
+    <img src="{{ launch?.links?.mission_patch_small }}">
+    <ion-card-content>
+      <p>
+        <b>Nom:</b> {{launch?.mission_name}}  <br />
+        <b>Année de lancement:</b> {{launch?.launch_year}} <br/>
+        <b>Site:</b> {{launch?.launch_site.site_name}}<br/>
+      </p>
+      <br />
+
+      <div ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-badge text-center ion-col *ngIf= "launch?.links?.article_link" color ="article" (click)="openLink(launch?.links?.article_link)">Article</ion-badge>
+            <ion-badge text-center ion-col *ngIf= "!launch?.links?.article_link" color ="gray">Article</ion-badge>
+          </ion-col>
+          <ion-col>
+            <ion-badge text-center ion-col *ngIf= "launch?.links?.video_link" color ="youtube" (click)="openLink(launch?.links?.video_link)">Live</ion-badge>
+            <ion-badge text-center ion-col *ngIf= "!launch?.links?.video_link" color ="gray">Live</ion-badge>
+          </ion-col>
+          <ion-col>
+              <ion-badge text-center ion-col *ngIf= "launch?.links?.presskit" color ="press" (click)="openLink(launch?.links?.presskit)">Press kit</ion-badge>
+              <ion-badge text-center ion-col *ngIf= "!launch?.links?.presskit" color ="gray">Presskit</ion-badge>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-badge text-center ion-col *ngIf= "launch?.links?.reddit_campaign" color ="reddit" (click)="openLink(launch?.links?.reddit_campaign)">Campaign</ion-badge>
+            <ion-badge text-center ion-col *ngIf= "!launch?.links?.reddit_campaign" color ="gray">Campaign</ion-badge>
+          </ion-col>
+          <ion-col>
+            <ion-badge text-center ion-col *ngIf= "launch?.links?.reddit_launch" color ="reddit" (click)="openLink(launch?.links?.reddit_launch)">Launch</ion-badge>
+            <ion-badge text-center ion-col *ngIf= "!launch?.links?.reddit_launch" color ="gray">Launch</ion-badge>
+          </ion-col>
+          <ion-col>
+            <ion-badge text-center ion-col *ngIf= "launch?.links?.reddit_media" color ="reddit" (click)="openLink(launch?.links?.reddit_media)">Media</ion-badge>
+            <ion-badge text-center ion-col *ngIf= "!launch?.links?.reddit_media" color ="gray">Media</ion-badge>
+          </ion-col>
+        </ion-row>
+      </div>
+
+      <h2><b>ROCKET</b></h2> 
+      <div class = "drawLine"></div>
+      <p>   
+         <button class="cell" (click)="openRocketDetail(launch?.rocket.rocket_id)">{{launch?.rocket.rocket_name}}</button><br/> 
+      </p>
+      <br />
+
+      <h2><b>DETAILS</b></h2> 
+      <div class = "drawLine"></div><br />
+      <p>
+          {{launch?.details}}<br/> 
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
