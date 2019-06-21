@@ -7,6 +7,8 @@ import { CompanyInfo } from '../../models/company/CompanyInfo';
 import { Capsule } from '../../models/capsule/Capsule';
 import { Launchpads } from '../../models/launchpads/Launchpads';
 import { CoreDetails } from '../../models/CoreDetails';
+import { Missions } from '../../models/missions/Missions'
+import { OneMission } from '../../models/missions/oneMission'
 
 /*
   Generated class for the SpaceXApiProvider provider.
@@ -16,7 +18,7 @@ import { CoreDetails } from '../../models/CoreDetails';
 */
 @Injectable()
 export class SpaceXApiProvider {
-  private baseUrl = "https://api.spacexdata.com/v2"
+  private baseUrl = "https://api.spacexdata.com/v3"
 
   constructor(public http: HttpClient) {
     console.log('Hello SpacexServiceProvider Provider');
@@ -64,5 +66,12 @@ export class SpaceXApiProvider {
 
   getLaunch(flight_number: string) : Observable<Launch[]>{
     return this.http.get<[Launch]>(this.baseUrl + "/launches?flight_number=" + flight_number)
+  }
+  getAllMissions() : Observable<Missions[]>{
+    return this.http.get<[Missions]>(this.baseUrl + "/missions")
+  }
+
+  getOneMission(missionsID: string) : Observable<OneMission[]>{
+    return this.http.get<[OneMission]>(this.baseUrl + "/missions/" + missionsID)
   }
 }
