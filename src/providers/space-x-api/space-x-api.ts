@@ -71,7 +71,7 @@ export class SpaceXApiProvider {
     return this.http.get<[Missions]>(this.baseUrl + "/missions")
   }
 
-  getOneMission(missionsID: string) : Observable<OneMission[]>{
-    return this.http.get<[OneMission]>(this.baseUrl + "/missions/" + missionsID)
+  getOneMission(missionsID: string) : Observable<OneMission>{
+    return this.http.get<OneMission>(this.baseUrl + "/missions/" + missionsID)
   }
 }

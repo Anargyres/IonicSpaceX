@@ -18,6 +18,7 @@ import { LaunchesPage } from '../pages/launches/launches';
 import { SearchPipe } from '../pipes/search/search';
 import { SortPipe } from '../pipes/sort/sort';
 import { MissionsPage} from '../pages/missions/missions';
+import { MissionDetailPage } from '../pages/mission-detail/mission-detail';
 @NgModule({
   declarations: [
     MyApp,
@@ -30,6 +31,7 @@ import { MissionsPage} from '../pages/missions/missions';
     LaunchpadDetailPage,
     CoreDetailsPage,
     MissionsPage,
+    MissionDetailPage,
   ],
   imports: [
     BrowserModule,
@@ -50,6 +52,7 @@ import { MissionsPage} from '../pages/missions/missions';
     CoreDetailsPage,
     LaunchpadDetailPage,
     MissionsPage,
+    MissionDetailPage,
   ],
   providers: [
     StatusBar,
