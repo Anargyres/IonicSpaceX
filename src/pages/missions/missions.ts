@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
 import { LoadingController } from 'ionic-angular';
 import { Missions } from '../../models/missions/Missions';
+import { OneMission } from '../../models/missions/oneMission';
+import { MissionDetailPage } from '../mission-detail/mission-detail';
 
 /**
  * Generated class for the MissionsPage page.
@@ -37,6 +39,10 @@ export class MissionsPage {
         loader.dismiss();
       });
     });
+  }
+
+  openMissionDetail(mission: OneMission) {
+    this.navCtrl.push(MissionDetailPage, {data: mission});
   }
 
 }

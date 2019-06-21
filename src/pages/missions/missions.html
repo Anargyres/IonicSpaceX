@@ -19,7 +19,7 @@
 <ion-content padding class="pageView">
   <ion-list>
     <button class="cell" ion-item no-lines *ngFor = "let mission of missions" (click)="openMissionDetail(mission)">
-      {{ mission.name }} <br />
+      {{ mission.mission_name }} <br />
       <p>{{ mission.description}}</p>
     </button>
   </ion-list>
