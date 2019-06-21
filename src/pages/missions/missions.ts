@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
+import { LoadingController } from 'ionic-angular';
+import { Missions } from '../../models/missions/Missions';
 
 /**
  * Generated class for the MissionsPage page.
@@ -15,11 +18,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MissionsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  missions: Missions[]
+
+  constructor(public navCtrl: NavController, 
+    private spaceXService: SpaceXApiProvider,
+    public navParams: NavParams,
+    public loadingCtrl: LoadingController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad MissionsPage');
+    console.log('ionViewDidLoad');
+    let loader = this.loadingCtrl.create({
+      content: 'Chargement...',
+    });
+    loader.present().then(() => {
+      this.spaceXService.getAllMissions().subscribe(data => {
+        this.missions = data;
+        loader.dismiss();
+      });
+    });
   }
 
 }
