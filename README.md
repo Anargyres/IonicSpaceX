@@ -1,7 +1,7 @@
 # ionic-spacex-api
 
 A SpaceX Ionic App
-Prerequisites
+##Prerequisites
 
 Ensure you have this installed before proceeding further
 
@@ -9,11 +9,12 @@ Ensure you have this installed before proceeding further
     npm 5.6,
     Ionic CLI
 
-Technology Stack
+##Technology Stack
 Component 	Technology
 Frontend 	Ionic 3 with Angular 5
 API 	SpaceX Data REST API
-Clone the repo
+
+##Clone the repo
 
 git clone https://github.com/Anargyres/IonicSpaceX.git
 
@@ -21,13 +22,13 @@ or use SSH
 
 git clone git@github.com:Anargyres/IonicSpaceX.git
 
-Install SpaceX App
+##Install SpaceX App
 
 Execute code on the root directory
 
 npm install
 
-Run the application on your Browser
+##Run the application on your Browser
 
 Execute on the root directory
 
