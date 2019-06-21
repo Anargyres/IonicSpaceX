@@ -3,7 +3,6 @@ import { IonicPage, NavController, LoadingController } from 'ionic-angular';
 import { Launch } from '../../models/launchs/Launch';
 import { SpaceXApiProvider } from '../../providers/space-x-api/space-x-api';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { GoogleMapPage } from '../google-map/google-map';
 
 /**
  * Generated class for the NextLaunchesPage page.
@@ -57,7 +56,6 @@ export class NextLaunchesPage {
 
   openMap(siteID: string){
     console.log("siteId : " + siteID)
-    this.navCtrl.push(GoogleMapPage, siteID);
   }
 
   setTimeUntilNextLaunche() {

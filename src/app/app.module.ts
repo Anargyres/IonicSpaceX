@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { GoogleMaps } from '@ionic-native/google-maps';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { SearchPage } from '../pages/search/search';
@@ -58,7 +57,6 @@ import { MissionsPage} from '../pages/missions/missions';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SpaceXApiProvider,
     InAppBrowser,
-    GoogleMaps
   ]
 })
 export class AppModule {}
